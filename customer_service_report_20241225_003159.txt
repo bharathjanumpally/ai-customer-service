@@ -1,0 +1,47 @@
+
+CUSTOMER SERVICE INTERACTION ANALYSIS REPORT
+==========================================
+
+1. SUMMARY METRICS
+-----------------
+Total Interactions: 20
+Unique Customers: 20
+
+2. CHANNEL ANALYSIS
+------------------
+Distribution:
+- chat: 10 (50.0%)
+- email: 7 (35.0%)
+- voice: 3 (15.0%)
+
+3. INTERACTION TYPES
+-------------------
+Distribution:
+- inquiry: 6 (30.0%)
+- complaint: 5 (25.0%)
+- support: 5 (25.0%)
+- feedback: 4 (20.0%)
+
+4. PRIORITY LEVELS
+-----------------
+Distribution:
+- medium: 11 (55.0%)
+- high: 5 (25.0%)
+- low: 4 (20.0%)
+
+5. TEMPORAL ANALYSIS
+-------------------
+Peak Hour: 0:00
+
+6. CROSS ANALYSIS
+----------------
+Channel by Type:
+- complaint: {'chat': 2, 'email': 2, 'voice': 1}
+- feedback: {'chat': 3, 'email': 1, 'voice': 0}
+- inquiry: {'chat': 3, 'email': 1, 'voice': 2}
+- support: {'chat': 2, 'email': 3, 'voice': 0}
+
+Channel by Priority:
+- high: {'chat': 2, 'email': 2, 'voice': 1}
+- low: {'chat': 3, 'email': 1, 'voice': 0}
+- medium: {'chat': 5, 'email': 4, 'voice': 2}
