@@ -1,0 +1,43 @@
+# Application Configuration
+app:
+  name: ai-customer-service
+  version: 1.0.0
+  environment: production
+
+# Service Configuration
+service:
+  port: 8000
+  workers: 3
+  timeout: 30
+
+# Redis Configuration
+redis:
+  host: ai-customer-service-redis
+  port: 6379
+  db: 0
+  timeout: 5
+
+# Model Configuration
+model:
+  sentiment:
+    input_size: 100
+    hidden_size: 64
+    num_classes: 3
+    batch_size: 32
+  router:
+    threshold: 0.7
+    cache_size: 1000
+
+# Monitoring Configuration
+monitoring:
+  enabled: true
+  metrics_port: 9090
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+# Scaling Configuration
+scaling:
+  min_replicas: 1
+  max_replicas: 5
+  target_cpu_utilization: 70
+  target_memory_utilization: 80

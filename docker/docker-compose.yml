@@ -6,11 +6,13 @@ services:
     image: redis:latest
     ports:
       - "6379:6379"
-    volumes:
-      - redis_data:/data
+    networks:
+      - ai-service-network
 
   api:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     ports:
       - "8000:8000"
     depends_on:
@@ -21,6 +23,10 @@ services:
       - SERVICE_HOST=0.0.0.0
       - SERVICE_PORT=8000
       - WORKER_COUNT=3
+    volumes:
+      - ../:/app
+    networks:
+      - ai-service-network
 
   worker:
     build: .
@@ -33,6 +39,19 @@ services:
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+  
+  monitoring:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../config/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - ai-service-network
+
+networks:
+  ai-service-network:
+    driver: bridge
 
 volumes:
   redis_data:

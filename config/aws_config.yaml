@@ -1,0 +1,26 @@
+# AWS Configuration
+region: us-east-1
+access_key_id: ${AWS_ACCESS_KEY_ID}
+secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+
+# EKS Configuration
+eks_cluster_name: ai-customer-service
+eks_node_type: t3.medium
+eks_min_nodes: 1
+eks_max_nodes: 5
+
+# ECR Configuration
+ecr_repository: ai-customer-service
+
+# CloudWatch Configuration
+log_group: /aws/eks/ai-customer-service
+metrics_namespace: AiCustomerService
+
+# VPC Configuration
+vpc_cidr: 10.0.0.0/16
+public_subnets:
+  - 10.0.1.0/24
+  - 10.0.2.0/24
+private_subnets:
+  - 10.0.3.0/24
+  - 10.0.4.0/24
